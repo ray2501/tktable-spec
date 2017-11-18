@@ -54,10 +54,10 @@ The basic features of the widgets are:
 make 
 
 %install
-make DESTDIR=%{buildroot} pkglibdir=%{directory}/%{_lib}/tcl/%{name}%{version} install
-rm %{buildroot}%{directory}/%{_lib}/tcl/%{name}%{version}/license.txt
-rm %{buildroot}%{directory}/%{_lib}/tcl/%{name}%{version}/README.txt
-rm -rf %{buildroot}%{directory}/%{_lib}/tcl/%{name}%{version}/html
+make DESTDIR=%{buildroot} pkglibdir=%{tcl_archdir}/%{name}%{version} install
+rm %{buildroot}%{tcl_archdir}/%{name}%{version}/license.txt
+rm %{buildroot}%{tcl_archdir}/%{name}%{version}/README.txt
+rm -rf %{buildroot}%{tcl_archdir}/%{name}%{version}/html
 
 %clean
 rm -rf %buildroot
@@ -65,5 +65,5 @@ rm -rf %buildroot
 %files
 %doc license.txt README.txt
 %defattr(-,root,root)
-%{directory}/%{_lib}/tcl
+%{tcl_archdir}
 
